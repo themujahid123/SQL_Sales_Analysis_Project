@@ -26,27 +26,19 @@
   `Gross_margin_percentage`, `Rating` (decimal)  
   `Timeofday`, `dayname`, `monthname` (varchar)
 
-4. **Data Cleaning:**
-   Renamed column headers for readability and consistency.
-   Used ALTER TABLE to modify column data types (e.g., increasing decimal precision).  
-   Checked for NULL values using:
-
- ```SQL
+4. **Data Cleaning:**  
+   Renamed column headers for readability and consistency.  
+   Used ALTER TABLE to modify column data types (e.g., increasing decimal precision).   
+   Checked for NULL values using:  
+```SQL
 SELECT COUNT(*) AS null_rows
 FROM Amazon
 WHERE Branch IS NULL OR city IS NULL OR Customer_type IS NULL OR Gender IS NULL
-   OR Product_line IS NULL OR Unit_price IS NULLOR quantity IS NULL
-   OR Tax IS NULL
-   OR Total IS NULL
-   OR sales_date IS NULL
-   OR sales_time IS NULL
-   OR payment IS NULL
-   OR cogs IS NULL
-   OR gross_margin_percentage IS NULL
-   OR gross_income IS NULL
-   OR Rating IS NULL
-   OR Timeofday IS NULL
-   OR dayname IS NULL
-   OR monthname IS NULL;
-   ```
+OR Product_line IS NULL OR Unit_price IS NULL OR quantity IS NULL OR Tax IS NULL
+OR Total IS NULL OR sales_date IS NULL OR sales_time IS NULL OR payment IS NULL
+OR cogs IS NULL OR gross_margin_percentage IS NULL OR gross_income IS NULL
+OR Rating IS NULL OR Timeofday IS NULL OR dayname IS NULL OR monthname IS NULL;
+```
+
+
 
