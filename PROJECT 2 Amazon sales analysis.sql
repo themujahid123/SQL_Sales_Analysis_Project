@@ -18,7 +18,7 @@ create table Amazon
     `gross margin percentage` DECIMAL(10,9),
     `gross income` DECIMAL(5,3),
     `Rating` DECIMAL(4,2))
-select * from Amazon
+
 
 alter table Amazon 
 modify column `Invoice id` varchar(20)
@@ -85,7 +85,6 @@ ADD COLUMN monthname VARCHAR (20)
 
 UPDATE Amazon
 SET monthname = DATE_FORMAT(sales_date,'%b')
-select monthname from Amazon
 
 -- What is the count of distinct cities in the dataset
 
@@ -177,8 +176,6 @@ FROM Amazon a
 JOIN AVG_PRODUCT_LINE b
   ON a.Product_line = b.
   
--- END PROJECT
-  
 -- with diffrent approach
 SELECT a.Product_line,a.Total,
 				CASE 
@@ -197,15 +194,12 @@ WITH BRANCH_SOLD AS (
 SELECT Branch,SUM(quantity) as TOTAL_QUANTITY
 FROM Amazon  
 GROUP BY 1 ),
-OVERALL_avg AS (
-				SELECT AVG(TOTAL_QUANTITY) AS AVG_QUANTITY
-				FROM BRANCH_SOLD)
+OVERALL_avg AS (SELECT AVG(TOTAL_QUANTITY) AS AVG_QUANTITY
+	         FROM BRANCH_SOLD)
 SELECT b.Branch,b.TOTAL_QUANTITY
 FROM BRANCH_SOLD b
 JOIN OVERALL_AVG a
 ON b.TOTAL_QUANTITY > a.AVG_QUANTITY
-
-
 
 -- Which product line is most frequently associated with each gender
  
@@ -247,10 +241,8 @@ limit 1
 -- Identify the customer type with the highest VAT payments.
 
 SELECT Customer_type,SUM(Tax) AS total_vat
-FROM 
- Amazon
-GROUP BY 
-  Customer_type
+FROM  Amazon
+GROUP BY Customer_type
 ORDER BY 
   total_vat DESC
 LIMIT 1;
@@ -263,11 +255,10 @@ SELECT DISTINCT payment from Amazon
 
 SELECT Customer_type,COUNT(*) AS purchase_count
 FROM Amazon
-GROUP BY 
-  Customer_type
-ORDER BY 
-  purchase_count DESC
+GROUP BY Customer_type
+ORDER BY purchase_count DESC
 LIMIT 1
+	
 -- Determine the predominant gender among customers.
 
 SELECT Gender,COUNT(*) AS customer_count
@@ -280,8 +271,7 @@ LIMIT 1;
 
 SELECT Branch,Gender,COUNT(*) AS gender_count
 FROM Amazon
-GROUP BY 
-  Branch, Gender
+GROUP BY Branch, Gender
 ORDER BY 
   Branch, Gender;
   
@@ -324,7 +314,8 @@ from Amazon
 group by 1 
 order by 2 desc
 
--- using subqueries
+-- using subquery
+	
 SELECT dayname, avg_rating,
 RANK() OVER (ORDER BY avg_rating DESC) AS rnk  
 FROM (SELECT dayname, AVG(Rating) AS avg_rating
