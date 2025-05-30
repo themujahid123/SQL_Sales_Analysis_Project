@@ -3,7 +3,7 @@ use project
 create table Amazon
   (`Invoice ID` INT PRIMARY KEY,    
     `Branch` VARCHAR(5),
-	`City` VARCHAR(15),
+    `City` VARCHAR(15),
     `Customer type` VARCHAR(15),
     `Gender` VARCHAR(10),
     `Product line` VARCHAR(20),
