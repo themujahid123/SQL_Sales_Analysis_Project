@@ -211,9 +211,8 @@ ON a.Product_line = b.Product_Line
 SELECT Branch,SUM(quantity) as TOTAL_QUANTITY
 FROM Amazon  
 GROUP BY 1 ),
-OVERALL_avg AS (
-				SELECT AVG(TOTAL_QUANTITY) AS AVG_QUANTITY
-				FROM BRANCH_SOLD)
+OVERALL_avg AS (SELECT AVG(TOTAL_QUANTITY) AS AVG_QUANTITY
+                 FROM BRANCH_SOLD)
 SELECT b.Branch,b.TOTAL_QUANTITY
 FROM BRANCH_SOLD b
 JOIN OVERALL_AVG a
@@ -333,5 +332,32 @@ from Amazon
 group by 1 
 order by 2 desc
 ```
+## Report
+**Sales Summary:**  
+Summarized total sales across all categories and time periods, broken down by customer demographics and purchase values.  
 
+**Trend Analysis:**  
+Analyzed sales trends across months, days of the week, and shifts (morning, afternoon, evening), providing time-based performance insights.  
 
+**Customer Insights:**  
+Reported on top customers, repeat buyers, and unique customer counts per category, highlighting key revenue drivers.  
+
+## Conclusion  
+This project involved building and analyzing a structured retail sales dataset using SQL. I performed data cleaning, column renaming, and data type correction to ensure database integrity. Feature engineering steps included creating new columns like day_name, month_name, and day_of_time for deeper time-based insights.
+Through this analysis, I uncovered valuable business patterns such as sales seasonality, high-value customers, and category performance. This hands-on project enhanced my skills in SQL querying, data preparation, and data-driven decision making, and prepared me for real-world data analyst roles.  
+
+##  Findings  
+**Customer Demographics:**
+The dataset includes gender information, allowing analysis of male vs. female purchasing behavior across different product categories such as Clothing, Beauty, and Electronics.
+
+**High-Value Transactions:**
+Several transactions had sales amounts greater than ₹1000, indicating premium purchases and the presence of high-value customers.
+
+**Sales Trends:**
+Monthly analysis showed clear variations in sales, helping identify peak seasons and low-performing months, useful for marketing and inventory planning.
+
+**Customer Insights:**
+The analysis identified top-spending customers and the most popular product categories, providing insight into what customers prefer and when they buy most.
+
+## Project by Mujahid pasha 
+- mujahidmujjum21@gmail.com
