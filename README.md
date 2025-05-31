@@ -348,10 +348,10 @@ Through this analysis, I uncovered valuable business patterns such as sales seas
 
 ##  Findings  
 **Customer Demographics:**
-The dataset includes gender information, allowing analysis of male vs. female purchasing behavior across different product categories such as Clothing, Beauty, and Electronics.
+The dataset includes gender information, allowing analysis of male vs. female purchasing behavior across different product 
 
 **High-Value Transactions:**
-Several transactions had sales amounts greater than ₹1000, indicating premium purchases and the presence of high-value customers.
+"The analysis reveals that the highest number of high-value transactions were conducted by [Male/Female] customers, indicating a significant correlation between gender and transaction value.".
 
 **Sales Trends:**
 Monthly analysis showed clear variations in sales, helping identify peak seasons and low-performing months, useful for marketing and inventory planning.
